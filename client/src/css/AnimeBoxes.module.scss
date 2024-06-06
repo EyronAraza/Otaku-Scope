@@ -1,3 +1,5 @@
+@import 'variables';
+
 // Anime items container
 #animeitems-container {
     padding: 40px 70px;
@@ -35,20 +37,23 @@
             padding-left: 15px;
             padding-top: 25px;
             padding-right: 15px;
-            opacity: 0;
+            opacity: 1;
             transition: 0.25s;
 
             // Style all anime titles
             p {
                 font-size: 1.2rem;
                 font-weight: bold;
+                transition: 0.25s;
             }
         }
 
         // Hover over anime link box
         &:hover {
             .text-popup {
-                opacity: 1;
+                p {
+                    color: $main-purple;
+                }
             }
         }
     }
