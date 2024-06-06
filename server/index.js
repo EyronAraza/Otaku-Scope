@@ -135,7 +135,7 @@ app.get('/home', verifyUser, (req, res) => {
 
 // Handle POST requets for logout
 app.post('/logout', (req, res) => {
-    res.clearCookie('token'); // Clear the token cookie
+    res.clearCookie('token', { path: '/' }) // clear token
     res.sendStatus(200); // Indicate successful logout
 });
 
