@@ -52,18 +52,9 @@ function Navbar() {
 
     // Logout button
     const handleLogout = async () => {
-        // Send a request to the server to indicate logout
-        fetch('/logout', { method: 'POST' })
-            .then(response => response.json())
-            .then(data => {
-                // On successful logout, delete the token cookie
-                document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-                setIsLoggedIn(false);
-                navigate('/login');
-            })
-            .catch((error) => {
-                console.error('Logout error:', error);
-            });
+        await fetch(`${SERVER_URL}/logout`, { method: 'POST' })
+
+        Cookies.remove('token')
 
         setIsLoggedIn(false)
 
