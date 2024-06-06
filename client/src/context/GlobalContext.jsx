@@ -35,7 +35,7 @@ const reducer = (state, action) => {
 // Create Global Provider
 export const GlobalProvider = ({ children }) => {
     // Store access to server/back-end side
-    const SERVER_URL = "https://otaku-scope-api.vercel.app/"
+    const SERVER_URL = "https://otaku-scope-api.vercel.app"
 
     // Initial state
     const initialState = {
