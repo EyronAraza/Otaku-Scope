@@ -52,9 +52,7 @@ function Navbar() {
 
     // Logout button
     const handleLogout = async () => {
-        await fetch(`${SERVER_URL}/logout`, { method: 'POST' })
-
-        Cookies.remove('token')
+        await axios.post(`${SERVER_URL}/logout`, {}, { withCredentials: true })
 
         setIsLoggedIn(false)
 

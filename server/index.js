@@ -133,10 +133,10 @@ app.get('/home', verifyUser, (req, res) => {
     return res.json(responseMessages);
 })
 
-// Handle POST requets for logout
+// Handle POST requets for Logout
 app.post('/logout', (req, res) => {
-    res.clearCookie('token', { path: '/' }) // clear token
-    res.sendStatus(200); // Indicate successful logout
+    res.clearCookie("token") // remove token
+    res.sendStatus(200);
 });
 
 // Handle POST requests for added anime item
