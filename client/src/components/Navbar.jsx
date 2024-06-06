@@ -52,13 +52,14 @@ function Navbar() {
 
     // Logout button
     const handleLogout = async () => {
-        // Remove the token by sending it to server side
-        await fetch('/logout', { method: 'POST' });
+        await fetch(`${SERVER_URL}/logout`, { method: 'POST' })
 
-        setIsLoggedIn(false);
+        document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
 
-        // Redirect to the login page
-        navigate('/login');
+        setIsLoggedIn(false)
+
+        // redirect to login page
+        navigate('/login')
     }
 
     // Button to redirect to "My List" page 
