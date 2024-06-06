@@ -82,9 +82,10 @@ function AnimeItem() {
         axios.get(`${SERVER_URL}/animeitem/status?username=${username}&animeId=${encodeURIComponent(id)}`)
             .then(response => {
                 setIsAdded(response.data.isInList); // set true or false if user already added the anime to their list or not
+                console.log(response.data.isInList)
             })
             .catch(error => console.error("Error fetching anime items:", error));
-    }, [])
+    }, [username, id])
 
     // Handle "Add to my List" button
     const handleAddListButton = () => {
