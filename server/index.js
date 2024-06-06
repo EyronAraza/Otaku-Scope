@@ -6,7 +6,6 @@ const cors = require('cors')
 const bcrypt = require('bcryptjs')
 const jwt = require("jsonwebtoken")
 const cookieParser = require('cookie-parser')
-const session = require('express-session');
 
 // ENV variables
 const MONGO_URI = process.env.MONGO_URI;
