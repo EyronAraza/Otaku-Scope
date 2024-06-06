@@ -51,15 +51,14 @@ function Navbar() {
     }
 
     // Logout button
-    const handleLogout = () => {
-        // Remove the token and user from local storage
-        Cookies.remove('token')
-        Cookies.remove('username')
+    const handleLogout = async () => {
+        // Remove the token by sending it to server side
+        await fetch('/logout', { method: 'POST' });
 
-        setIsLoggedIn(false)
+        setIsLoggedIn(false);
 
-        // redirect to login page
-        navigate('/login')
+        // Redirect to the login page
+        navigate('/login');
     }
 
     // Button to redirect to "My List" page 

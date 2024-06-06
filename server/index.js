@@ -133,6 +133,19 @@ app.get('/home', verifyUser, (req, res) => {
     return res.json(responseMessages);
 })
 
+// Handle POST requets for logout
+app.post('/logout', (req, res) => {
+    // Clear the session 
+    req.session.destroy(err => {
+        if (err) {
+            console.error(err);
+            return res.status(500).send('Logout failed');
+        }
+        res.clearCookie('token'); // Clear the token cookie
+        res.sendStatus(200); // Indicate successful logout
+    });
+});
+
 // Handle POST requests for added anime item
 app.post('/animeitem', (req, res) => {
     // Add anime item to the database
