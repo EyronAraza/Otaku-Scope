@@ -83,7 +83,7 @@ function AnimeItem() {
             .then(response => {
                 setIsAdded(response.data.isInList); // set true or false if user already added the anime to their list or not
             })
-            .catch(error => console.error("Error fetching cart status:", error));
+            .catch(error => console.error("Error fetching anime items:", error));
     }, [])
 
     // Handle "Add to my List" button
