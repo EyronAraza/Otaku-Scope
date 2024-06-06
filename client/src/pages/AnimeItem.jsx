@@ -46,7 +46,7 @@ function AnimeItem() {
     }, [])
 
     // Get username
-    const username = Cookies.get('username') ? Cookies.get('username') : ''
+    const [username, setUsername] = useState('')
 
     // Bool for Add to my List button
     const [isAdded, setIsAdded] = useState(false)
@@ -66,6 +66,7 @@ function AnimeItem() {
                     setIsLoggedIn(false)
                 } else {
                     // Get username after login
+                    setUsername(result.data.user)
                     setIsLoggedIn(true)
                 }
             })
