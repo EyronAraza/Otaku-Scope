@@ -52,7 +52,7 @@ function Navbar() {
 
     // Logout button
     const handleLogout = async () => {
-        await fetch(`${SERVER_URL}/logout`, { method: 'POST' })
+        await fetch(`${SERVER_URL}/logout`, { method: 'POST' }).catch(error => console.error('Logout error:', error))
 
         document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
 
