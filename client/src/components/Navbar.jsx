@@ -52,6 +52,7 @@ function Navbar() {
 
     // Logout button
     const handleLogout = async () => {
+        // Call post data from server side to remove the token, thus logout
         await axios.post(`${SERVER_URL}/logout`, {}, { withCredentials: true })
 
         setIsLoggedIn(false)
