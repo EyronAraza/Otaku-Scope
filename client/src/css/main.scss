@@ -1,0 +1,49 @@
+@import 'variables';
+
+* {
+    // Initial resets
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    // Main font 
+    font-family: $font-poppins;
+
+    // Scrollbar customisation
+    scrollbar-width: thin;
+    scrollbar-color: grey black;
+
+    color: $main-txt-color;
+}
+
+// bg test
+body {
+    background-color: $main-bg-color;
+
+    // bg img
+    // background-image: url(../img/bg-test.png);
+    // background-repeat: no-repeat;
+    // background-attachment: fixed;
+    // background-size: cover;
+    // background-color: #35384c;
+    // background-color: #20222c;
+    //background-color: #282934;
+}
+
+// html {
+//     scroll-behavior: smooth;
+// }
+
+/* For Tablet screens (over 480px and under 800px) */
+@media only screen and (min-width: 480px) and (max-width: 800px) {
+    // body {
+    //     background-color: aquamarine;
+    // }
+}
+
+/* For Phone screens (under 480px) */
+@media only screen and (max-width: 480px) {
+    // body {
+    //     background-color: bisque;
+    // }
+}

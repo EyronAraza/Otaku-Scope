@@ -1,0 +1,179 @@
+@import 'variables';
+
+// Style user's anime main item
+$border-size: 3.5px;
+
+#item-container {
+    display: flex;
+    color: black;
+    background-color: white;
+    width: 100%;
+    height: 125px;
+    border-radius: 12.5px;
+    box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+
+    form {
+        display: flex;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.purple {
+    border: $border-size solid $watching-color;
+}
+
+.blue {
+    border: $border-size solid $plan-watching-color;
+}
+
+.green {
+    border: $border-size solid $completed-color;
+}
+
+.red {
+    border: $border-size solid $dropped-color;
+}
+
+// Image container
+#image-container {
+    display: flex;
+    margin-right: 25px;
+
+    // Style image link
+    a {
+        width: 80px;
+        height: auto;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+// Title container
+#title-container {
+    display: flex;
+    align-items: center;
+    flex: 3;
+
+    // Style title link
+    a {
+        font-weight: bold;
+        color: black;
+    }
+}
+
+// Status container
+#status-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+
+    p {
+        color: black;
+        font-weight: bold;
+    }
+
+    select {
+        color: black;
+        width: 100%;
+        min-width: 120px;
+        padding: 0 5px;
+
+        option {
+            color: black;
+        }
+    }
+}
+
+// Episode container
+#episode-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+
+    p {
+        font-weight: bold;
+    }
+
+    p,
+    input {
+        color: black;
+    }
+
+    input {
+        width: 60px;
+    }
+}
+
+// Save and Delete buttons container
+#save-delete-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+
+    // Style both buttons
+    button {
+        font-weight: bold;
+        padding: 3px 8px;
+        border: 0;
+        cursor: pointer;
+        box-sizing: content-box;
+        font-size: 1rem;
+        white-space: nowrap;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    // Save button
+    #save-btn {
+        background-color: $green-btn;
+
+        // Hover search button
+        &:hover {
+            background-color: lighten($green-btn, 5%);
+        }
+    }
+
+    // Delete button
+    #delete-btn {
+        background-color: $red-btn;
+
+        // Hover search button
+        &:hover {
+            background-color: lighten($red-btn, 5%);
+        }
+    }
+}
+
+/* For Phone screens (under 480px) */
+@media only screen and (max-width: 480px) {
+    #item-container {
+        height: auto;
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 0;
+        }
+    }
+
+    // Image container
+    #image-container {
+        margin-right: 0;
+    }
+}

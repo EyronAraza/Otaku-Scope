@@ -1,0 +1,124 @@
+@import 'variables';
+
+#main-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 75px;
+    width: 100%;
+    height: 90vh;
+    // border: 2px solid red;
+
+    #discover-text {
+        text-align: center;
+        padding: 0px 20px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        font-size: 1.5rem;
+    }
+
+    // Login container
+    #login-container {
+        display: flex;
+        flex-direction: column;
+        background-color: $main-blue;
+        width: 500px;
+        height: auto;
+        border-radius: 10px;
+        padding: 10px 50px;
+        z-index: 2;
+
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        // Login form
+        form {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 30px;
+
+            // Style all search box inputs
+            input {
+                color: black;
+                padding: 0 5px;
+                margin-bottom: 20px;
+                height: 35px;
+                font-size: 1rem;
+                border-radius: 5px;
+            }
+
+            // Style all text labels
+            label {
+                font-size: 1rem;
+                margin-bottom: 2px;
+            }
+
+            #login-btn {
+                margin-top: 10px;
+                height: auto;
+                padding: 5px 0;
+                width: 100%;
+                border-radius: 5px;
+                background-color: $main-purple;
+                border: 0;
+                cursor: pointer;
+                box-sizing: content-box;
+                font-size: 1rem;
+                margin-right: 20px;
+                white-space: nowrap;
+                text-align: center;
+
+                // Hover search button
+                &:hover {
+                    background-color: lighten($main-purple, 5%);
+                }
+            }
+        }
+
+        #register-grey-btn {
+            margin-top: 5px;
+            margin-bottom: 20px;
+            height: auto;
+            padding: 5px 0;
+            width: 100%;
+            border-radius: 5px;
+            background-color: $grey-btn;
+            border: 0;
+            cursor: pointer;
+            box-sizing: content-box;
+            font-size: 1rem;
+            margin-right: 20px;
+            // white-space: nowrap;
+            text-decoration: none;
+            text-align: center;
+            color: black;
+
+            // Hover search button
+            &:hover {
+                background-color: darken($grey-btn, 10%);
+            }
+        }
+    }
+}
+
+/* For Tablet screens (over 480px and under 800px) */
+@media only screen and (min-width: 480px) and (max-width: 800px) {
+    #main-content {
+        #login-container {
+            width: 90%;
+        }
+    }
+}
+
+/* For Phone screens (under 480px) */
+@media only screen and (max-width: 480px) {
+    #main-content {
+        #login-container {
+            width: 90%;
+        }
+    }
+}

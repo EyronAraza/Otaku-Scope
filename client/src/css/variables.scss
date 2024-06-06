@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+// Website background colors
+$main-bg-color: #08082D;
+$bg-color-2: #E2E2F0;
+
+// Fonts
+$font-poppins: 'Poppins', sans-serif;
+
+// Colors
+$main-txt-color: #fff;
+$main-purple: #5C5CD4;
+$main-blue: #19195A;
+$grey-btn: whitesmoke;
+$green-btn: #12B59B;
+$red-btn: #FF2877;
+
+// Anime Status Indicators
+$watching-color: #f89945;
+$plan-watching-color: #50afe4;
+$completed-color: #61ab7a;
+$dropped-color: #ff4d52;
+
+// Style Button
+@mixin custom-button($bg-color) {
+    padding: 5px 15px;
+    border-radius: 5px;
+    background-color: $bg-color;
+    border: 0;
+    cursor: pointer;
+    box-sizing: content-box;
+    font-size: 1rem;
+    white-space: nowrap;
+    text-align: center;
+    text-decoration: none;
+
+    // Hover search button
+    &:hover {
+        background-color: lighten($bg-color, 5%);
+    }
+}

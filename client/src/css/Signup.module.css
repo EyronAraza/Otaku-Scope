@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+#main-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 75px;
+  width: 100%;
+  height: auto; }
+  #main-content #discover-text {
+    text-align: center;
+    padding: 0px 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 1.5rem; }
+  #main-content #signup-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #19195A;
+    width: 500px;
+    height: auto;
+    border-radius: 10px;
+    padding: 10px 50px;
+    z-index: 2;
+    margin-bottom: 50px; }
+    #main-content #signup-container h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 10px; }
+    #main-content #signup-container form {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 30px; }
+      #main-content #signup-container form input {
+        color: black;
+        padding: 0 5px;
+        margin-bottom: 20px;
+        height: 35px;
+        font-size: 1rem;
+        border-radius: 5px; }
+      #main-content #signup-container form label {
+        font-size: 1rem;
+        margin-bottom: 2px; }
+      #main-content #signup-container form #signup-btn {
+        margin-top: 10px;
+        height: auto;
+        padding: 5px 0;
+        width: 100%;
+        border-radius: 5px;
+        background-color: #5C5CD4;
+        border: 0;
+        cursor: pointer;
+        box-sizing: content-box;
+        font-size: 1rem;
+        margin-right: 20px;
+        white-space: nowrap;
+        text-align: center; }
+        #main-content #signup-container form #signup-btn:hover {
+          background-color: #7070d9; }
+    #main-content #signup-container #login-grey-btn {
+      margin-top: 5px;
+      margin-bottom: 20px;
+      height: auto;
+      padding: 5px 0;
+      width: 100%;
+      border-radius: 5px;
+      background-color: whitesmoke;
+      border: 0;
+      cursor: pointer;
+      box-sizing: content-box;
+      font-size: 1rem;
+      margin-right: 20px;
+      text-decoration: none;
+      text-align: center;
+      color: black; }
+      #main-content #signup-container #login-grey-btn:hover {
+        background-color: gainsboro; }
+
+/* For Tablet screens (over 480px and under 800px) */
+@media only screen and (min-width: 480px) and (max-width: 800px) {
+  #main-content #signup-container {
+    width: 90%; } }
+/* For Phone screens (under 480px) */
+@media only screen and (max-width: 480px) {
+  #main-content #signup-container {
+    width: 90%; } }
+
+/*# sourceMappingURL=Signup.module.css.map */

@@ -1,0 +1,63 @@
+#animeitems-container {
+  padding: 40px 70px;
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 2rem; }
+  #animeitems-container a {
+    position: relative;
+    height: 450px;
+    margin-bottom: 10px;
+    border-radius: 7px;
+    border: 2px solid whitesmoke;
+    text-decoration: none; }
+    #animeitems-container a img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 5px; }
+    #animeitems-container a .text-popup {
+      position: absolute;
+      width: 100%;
+      height: auto;
+      bottom: 0;
+      background: linear-gradient(0deg, #000 60%, rgba(0, 0, 0, 0) 100%);
+      padding-bottom: 10px;
+      padding-left: 15px;
+      padding-top: 25px;
+      padding-right: 15px;
+      opacity: 0;
+      transition: 0.25s; }
+      #animeitems-container a .text-popup p {
+        font-size: 1.2rem;
+        font-weight: bold; }
+    #animeitems-container a:hover .text-popup {
+      opacity: 1; }
+
+/* For Tablet screens (over 480px and under 800px) */
+@media only screen and (min-width: 480px) and (max-width: 800px) {
+  #animeitems-container {
+    padding: 40px 40px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 2rem; }
+    #animeitems-container a {
+      height: 400px;
+      margin-bottom: 10px; }
+      #animeitems-container a .text-popup {
+        opacity: 1;
+        transition: none; } }
+/* For Phone screens (under 480px) */
+@media only screen and (max-width: 480px) {
+  #animeitems-container {
+    padding: 40px 20px;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 2rem; }
+    #animeitems-container a {
+      height: 300px;
+      margin-bottom: 10px; }
+      #animeitems-container a .text-popup {
+        opacity: 1;
+        transition: none; } }
+
+/*# sourceMappingURL=AnimeBoxes.module.css.map */

@@ -1,0 +1,304 @@
+@import 'variables';
+
+// Style all containers related to Anime
+@mixin styleAnimeContainers {
+    width: 100%;
+    height: auto;
+    padding: 25px;
+    background-color: $main-blue;
+    border-radius: 25px;
+    margin-bottom: 40px;
+}
+
+#main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-top: 75px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 50px;
+    // border: 2px solid red;
+}
+
+#content-container {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    height: auto;
+    // border: 2px solid blue
+}
+
+// Back button
+#back-btn {
+    align-self: flex-start;
+    padding: 5px 20px;
+    border-radius: 5px;
+    background-color: $main-purple;
+    border: 0;
+    cursor: pointer;
+    box-sizing: content-box;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    white-space: nowrap;
+    text-align: center;
+    text-decoration: none;
+
+    // Style back arrow icon
+    i {
+        margin-right: 5px;
+    }
+
+    // Hover search button
+    &:hover {
+        background-color: lighten($main-purple, 5%);
+    }
+}
+
+// Anime trailer container
+#anime-trailer-container {
+    @include styleAnimeContainers();
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+
+    h1 {
+        position: relative;
+        bottom: 10px;
+        text-align: center;
+        font-size: 2.2rem;
+    }
+
+    // Style YT video container
+    #video-container {
+        // Calculate 16:9 aspect ratio
+        $width-value: 800px;
+        width: $width-value;
+        height: 9 * $width-value / 16;
+        min-width: 300px;
+
+        // Iframe of youtube video
+        iframe {
+            border-radius: 12px;
+            border: 0;
+        }
+    }
+}
+
+// Anime info container
+#anime-info-container {
+    @include styleAnimeContainers();
+
+    // Anime img and details container
+    #anime-info-child-container {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        height: auto;
+
+        hr {
+            opacity: 0.5;
+            margin-bottom: 8px;
+        }
+
+        // Anime img and button container
+        #anime-img-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            // border: 2px solid green;
+            margin-bottom: auto;
+
+            // Style anime img
+            img {
+                margin-bottom: 20px;
+                width: 300px;
+                height: auto;
+                border-radius: 7px;
+            }
+
+            // Button "Add to List"
+            #add-list-button {
+                align-self: center;
+                padding: 5px 20px;
+                border-radius: 5px;
+                background-color: $green-btn;
+                border: 0;
+                cursor: pointer;
+                box-sizing: content-box;
+                font-size: 1rem;
+                margin-bottom: 20px;
+                white-space: nowrap;
+                text-align: center;
+                text-decoration: none;
+
+                // Style back arrow icon
+                i {
+                    margin-right: 5px;
+                }
+
+                // Hover search button
+                &:hover {
+                    background-color: lighten($green-btn, 5%);
+                }
+            }
+        }
+
+        // Anime desc container
+        #anime-desc-container {
+            height: auto;
+            flex: 1;
+            // border: 2px solid green;
+            padding: 0 20px;
+            padding-bottom: 10px;
+            margin-bottom: auto;
+
+            h1 {
+                font-size: 2.2rem;
+                text-align: left;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    // Anime details table
+    #anime-details-table {
+        border-collapse: collapse;
+        width: 100%;
+
+        // Style table cells
+        th,
+        td {
+            padding: 10px;
+            vertical-align: top;
+            text-align: left;
+            font-size: 1rem;
+        }
+
+        // Style first column of cell
+        .nowrap-cell {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            min-width: fit-content;
+        }
+
+        // Style all "detail type" text
+        .detail-type-text {
+            background-color: $main-purple;
+            padding: 1px 15px;
+            font-weight: bold;
+            border-radius: 50px;
+        }
+    }
+}
+
+/* For Tablet screens (over 480px and under 800px) */
+@media only screen and (min-width: 480px) and (max-width: 800px) {
+
+    // Style content container consisting of anime stuffs
+    #content-container {
+        width: 90%;
+    }
+
+    // Anime info container
+    #anime-info-container {
+
+        // Anime img and details container
+        #anime-info-child-container {
+            flex-direction: column;
+            align-items: center;
+
+            #anime-img-container {
+
+                #add-list-button {
+                    margin-bottom: 0;
+                }
+            }
+
+            // Anime description container
+            #anime-desc-container {
+                h1 {
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    // YT Video container
+    // Anime trailer container
+    #anime-trailer-container {
+        width: 100%;
+
+        // Style YT video container
+        #video-container {
+            // Calculate 16:9 aspect ratio
+            $width-value: 80vw;
+            width: $width-value;
+            height: 9 * $width-value / 16;
+        }
+    }
+}
+
+/* For Phone screens (under 480px) */
+@media only screen and (max-width: 480px) {
+
+    // Style content container consisting of anime stuffs
+    #content-container {
+        width: 90%;
+    }
+
+    // Anime info container
+    #anime-info-container {
+        padding: 25px 2px;
+
+        // Anime img and details container
+        #anime-info-child-container {
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 10px;
+
+            // Anime img and button container
+            #anime-img-container {
+
+                // Style anime img
+                img {
+                    width: 200px;
+                }
+
+                #add-list-button {
+                    margin-bottom: 0;
+                }
+            }
+
+            // Anime description container
+            #anime-desc-container {
+                h1 {
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    // YT Video container
+    // Anime trailer container
+    #anime-trailer-container {
+        width: 100%;
+
+        // Style YT video container
+        #video-container {
+            // Calculate 16:9 aspect ratio
+            $width-value: 89vw;
+            width: $width-value;
+            height: 9 * $width-value / 16;
+        }
+    }
+}
