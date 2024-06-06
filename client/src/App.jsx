@@ -16,7 +16,7 @@ function App() {
       {/* Creating routes, basically the going to the pages, element parameter represents jsx files of pages */}
       <Routes>
         {/* To go to these pages, type "http://localhost:5173/register" after running the server, next to the local host url, just type the path for example "/register" */}
-        <Route path='/' element={<Login />}></Route>
+        <Route path='/' element={<Home />}></Route>
         <Route path='/signup' element={<Signup />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/home' element={<Home />}></Route>
