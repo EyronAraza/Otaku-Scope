@@ -18,7 +18,7 @@ const userModel = require('./models/user')
 const addedAnimeModel = require('./models/usersAddedAnime')
 
 // Client URL
-const client_url = "http://localhost:5173"
+const client_url = "https://otaku-scope.vercel.app"
 
 // Create express app
 const app = express()
