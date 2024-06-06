@@ -135,15 +135,8 @@ app.get('/home', verifyUser, (req, res) => {
 
 // Handle POST requets for logout
 app.post('/logout', (req, res) => {
-    // Clear the session 
-    req.session.destroy(err => {
-        if (err) {
-            console.error(err);
-            return res.status(500).send('Logout failed');
-        }
-        res.clearCookie('token'); // Clear the token cookie
-        res.sendStatus(200); // Indicate successful logout
-    });
+    res.clearCookie('token'); // Clear the token cookie
+    res.sendStatus(200); // Indicate successful logout
 });
 
 // Handle POST requests for added anime item
