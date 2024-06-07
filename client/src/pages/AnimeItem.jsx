@@ -33,11 +33,17 @@ function AnimeItem() {
     // Anime title to check for english title, otherwise use japanese title
     const animeTitleCheck = title_english ? title_english : title
 
-    // Get anime based on ID
+    // Handle loading for fetching the data and getting user's added the anime item 
+    const [isDataLoading, setIsDataLoaing] = useState(false)
+    const [isAddedAnimeLoading, setIsAddedAnimeLoading] = useState(false)
+
+    // Get anime data based on ID
     const getAnime = async (anime) => {
+        setIsDataLoaing(true) // enable loading
         const response = await fetch(`https://api.jikan.moe/v4/anime/${anime}`)
         const data = await response.json()
         setAnime(data.data)
+        setIsDataLoaing(false) // disable loading
     }
 
     useEffect(() => {
@@ -78,6 +84,8 @@ function AnimeItem() {
     };
 
     useEffect(() => {
+        setIsAddedAnimeLoading(true) // Enable loading
+
         // Check if there are any added anime items by the user in the database to set the current status of the button
         axios.get(`${SERVER_URL}/animeitem/status?username=${username}&animeId=${encodeURIComponent(id)}`)
             .then(response => {
@@ -85,6 +93,8 @@ function AnimeItem() {
                 console.log(response.data.isInList)
             })
             .catch(error => console.error("Error fetching anime items:", error));
+
+        setIsAddedAnimeLoading(false) // Disable loading
     }, [username, id])
 
     // Handle "Add to my List" button
@@ -132,8 +142,11 @@ function AnimeItem() {
 
             {/* Main Content (takes whole screen below navbar)*/}
             <main id={animeStyle['main-content']}>
+                {/* Loading container */}
+                <div className={isDataLoading ? animeStyle["enable-loading"] : animeStyle["disable-content"]}>Loading Anime...</div>
+
                 {/* Content Container */}
-                <div id={animeStyle["content-container"]}>
+                <div className={isDataLoading ? animeStyle["disable-content"] : animeStyle["content-container"]}>
                     {/* Back button */}
                     <Link onClick={() => { navigate(-1) }} id={animeStyle['back-btn']}><i className="fa-solid fa-arrow-left"></i> Back</Link>
 
@@ -149,11 +162,13 @@ function AnimeItem() {
 
                                 {/* Add to List button */}
                                 <button
-                                    id={animeStyle['add-list-button']}
+                                    className={isAddedAnimeLoading ? animeStyle['disable-content'] : animeStyle['add-list-button']}
                                     onClick={() => handleAddListButton()}
                                     style={isAdded ? { backgroundColor: "#FF2877" } : {}}>
                                     {isAdded ? "Remove from my List" : "Add To my List"}
                                 </button>
+                                {/* Loading for button */}
+                                <div className={isAddedAnimeLoading ? animeStyle["enable-loading"] : animeStyle["disable-content"]}>Loading Button...</div>
                             </div>
 
                             {/* Anime Details Container */}

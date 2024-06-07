@@ -22,7 +22,7 @@
     // border: 2px solid red;
 }
 
-#content-container {
+.content-container {
     margin-top: 25px;
     display: flex;
     flex-direction: column;
@@ -30,6 +30,17 @@
     width: 80%;
     height: auto;
     // border: 2px solid blue
+}
+
+.disable-content {
+    display: none;
+}
+
+.enable-loading {
+    margin-top: 50px;
+    display: block;
+    text-align: center;
+    font-size: 1.3rem;
 }
 
 // Back button
@@ -123,7 +134,7 @@
             }
 
             // Button "Add to List"
-            #add-list-button {
+            .add-list-button {
                 align-self: center;
                 padding: 5px 20px;
                 border-radius: 5px;
@@ -227,7 +238,7 @@
 
             #anime-img-container {
 
-                #add-list-button {
+                .add-list-button {
                     margin-bottom: 0;
                 }
             }
@@ -284,7 +295,7 @@
                     width: 200px;
                 }
 
-                #add-list-button {
+                .add-list-button {
                     margin-bottom: 0;
                 }
             }

@@ -9,13 +9,22 @@
   height: auto;
   margin-bottom: 50px; }
 
-#content-container {
+.content-container {
   margin-top: 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 80%;
   height: auto; }
+
+.disable-content {
+  display: none; }
+
+.enable-loading {
+  margin-top: 50px;
+  display: block;
+  text-align: center;
+  font-size: 1.3rem; }
 
 #back-btn {
   align-self: flex-start;
@@ -84,7 +93,7 @@
         width: 300px;
         height: auto;
         border-radius: 7px; }
-      #anime-info-container #anime-info-child-container #anime-img-container #add-list-button {
+      #anime-info-container #anime-info-child-container #anime-img-container .add-list-button {
         align-self: center;
         padding: 5px 20px;
         border-radius: 5px;
@@ -97,9 +106,9 @@
         white-space: nowrap;
         text-align: center;
         text-decoration: none; }
-        #anime-info-container #anime-info-child-container #anime-img-container #add-list-button i {
+        #anime-info-container #anime-info-child-container #anime-img-container .add-list-button i {
           margin-right: 5px; }
-        #anime-info-container #anime-info-child-container #anime-img-container #add-list-button:hover {
+        #anime-info-container #anime-info-child-container #anime-img-container .add-list-button:hover {
           background-color: #14ccaf; }
     #anime-info-container #anime-info-child-container #anime-table-container {
       flex: 1;
@@ -144,7 +153,7 @@
   #anime-info-container #anime-info-child-container {
     flex-direction: column;
     align-items: center; }
-    #anime-info-container #anime-info-child-container #anime-img-container #add-list-button {
+    #anime-info-container #anime-info-child-container #anime-img-container .add-list-button {
       margin-bottom: 0; }
     #anime-info-container #anime-info-child-container #anime-table-container h1 {
       text-align: center; }
@@ -167,7 +176,7 @@
       margin-bottom: 10px; }
       #anime-info-container #anime-info-child-container #anime-img-container img {
         width: 200px; }
-      #anime-info-container #anime-info-child-container #anime-img-container #add-list-button {
+      #anime-info-container #anime-info-child-container #anime-img-container .add-list-button {
         margin-bottom: 0; }
       #anime-info-container #anime-info-child-container #anime-table-container h1 {
         text-align: center; }
