@@ -196,10 +196,12 @@ app.get('/animeItem/items', async (req, res) => {
     }
 })
 
+// Handle PUT requests for updating the tracker list's data of current status and current episode by the user
 app.put('/update-anime-item', async (req, res) => {
     const { animeId, status, episode } = req.body;
 
     try {
+        // Update data in database
         const result = await addedAnimeModel.updateOne(
             { animeId },
             { $set: { status, episode } }
