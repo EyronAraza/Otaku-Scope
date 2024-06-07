@@ -84,18 +84,22 @@ function AnimeItem() {
     };
 
     useEffect(() => {
-        setIsAddedAnimeLoading(true) // Enable loading
+        const fetchAddedAnimeStatus = async () => {
+            setIsAddedAnimeLoading(true); // Enable loading
 
-        // Check if there are any added anime items by the user in the database to set the current status of the button
-        axios.get(`${SERVER_URL}/animeitem/status?username=${username}&animeId=${encodeURIComponent(id)}`)
-            .then(response => {
+            // Check if there are any added anime items by the user in the database to set the current status of the button
+            try {
+                const response = await axios.get(`${SERVER_URL}/animeitem/status?username=${username}&animeId=${encodeURIComponent(id)}`);
                 setIsAdded(response.data.isInList); // set true or false if user already added the anime to their list or not
-                console.log(response.data.isInList)
-            })
-            .catch(error => console.error("Error fetching anime items:", error));
+            } catch (error) {
+                console.error("Error fetching anime items:", error);
+            }
 
-        setIsAddedAnimeLoading(false) // Disable loading
-    }, [username, id])
+            setIsAddedAnimeLoading(false); // Disable loading
+        };
+
+        fetchAddedAnimeStatus();
+    }, [username, id]);
 
     // Handle "Add to my List" button
     const handleAddListButton = () => {
