@@ -101,36 +101,40 @@
           margin-right: 5px; }
         #anime-info-container #anime-info-child-container #anime-img-container #add-list-button:hover {
           background-color: #14ccaf; }
-    #anime-info-container #anime-info-child-container #anime-desc-container {
-      height: auto;
+    #anime-info-container #anime-info-child-container #anime-table-container {
       flex: 1;
       padding: 0 20px;
-      padding-bottom: 10px;
-      margin-bottom: auto; }
-      #anime-info-container #anime-info-child-container #anime-desc-container h1 {
+      width: 100%; }
+      #anime-info-container #anime-info-child-container #anime-table-container h1 {
         font-size: 2.2rem;
         text-align: left; }
-      #anime-info-container #anime-info-child-container #anime-desc-container p {
-        font-size: 1rem; }
-  #anime-info-container #anime-details-table {
-    border-collapse: collapse;
-    width: 100%; }
-    #anime-info-container #anime-details-table th,
-    #anime-info-container #anime-details-table td {
-      padding: 10px;
-      vertical-align: top;
-      text-align: left;
+      #anime-info-container #anime-info-child-container #anime-table-container #anime-details-table {
+        border-collapse: collapse;
+        width: 100%; }
+        #anime-info-container #anime-info-child-container #anime-table-container #anime-details-table th,
+        #anime-info-container #anime-info-child-container #anime-table-container #anime-details-table td {
+          padding: 10px;
+          vertical-align: top;
+          text-align: left;
+          font-size: 1rem; }
+        #anime-info-container #anime-info-child-container #anime-table-container #anime-details-table .nowrap-cell {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          min-width: fit-content; }
+        #anime-info-container #anime-info-child-container #anime-table-container #anime-details-table .detail-type-text {
+          background-color: #5C5CD4;
+          padding: 1px 15px;
+          font-weight: bold;
+          border-radius: 50px; }
+  #anime-info-container #anime-desc-container {
+    height: auto;
+    flex: 1;
+    padding: 10px;
+    padding-bottom: 10px;
+    margin-bottom: auto; }
+    #anime-info-container #anime-desc-container p {
       font-size: 1rem; }
-    #anime-info-container #anime-details-table .nowrap-cell {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      min-width: fit-content; }
-    #anime-info-container #anime-details-table .detail-type-text {
-      background-color: #5C5CD4;
-      padding: 1px 15px;
-      font-weight: bold;
-      border-radius: 50px; }
 
 /* For Tablet screens (over 480px and under 800px) */
 @media only screen and (min-width: 480px) and (max-width: 800px) {
@@ -142,7 +146,7 @@
     align-items: center; }
     #anime-info-container #anime-info-child-container #anime-img-container #add-list-button {
       margin-bottom: 0; }
-    #anime-info-container #anime-info-child-container #anime-desc-container h1 {
+    #anime-info-container #anime-info-child-container #anime-table-container h1 {
       text-align: center; }
 
   #anime-trailer-container {
@@ -165,7 +169,7 @@
         width: 200px; }
       #anime-info-container #anime-info-child-container #anime-img-container #add-list-button {
         margin-bottom: 0; }
-      #anime-info-container #anime-info-child-container #anime-desc-container h1 {
+      #anime-info-container #anime-info-child-container #anime-table-container h1 {
         text-align: center; }
 
   #anime-trailer-container {

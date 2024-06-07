@@ -139,7 +139,7 @@ function AnimeItem() {
 
                     {/* Container consists of Anime information */}
                     <div id={animeStyle["anime-info-container"]}>
-                        {/* Image and Info Container */}
+                        {/* Image and Details Container */}
                         <div id={animeStyle["anime-info-child-container"]}>
                             {/* Anime Image and button container */}
                             <div id={animeStyle["anime-img-container"]}>
@@ -156,59 +156,62 @@ function AnimeItem() {
                                 </button>
                             </div>
 
-                            {/* Anime Description container */}
-                            <div id={animeStyle["anime-desc-container"]}>
+                            {/* Anime Details Container */}
+                            <div id={animeStyle['anime-table-container']}>
                                 {/* Anime Title (If english title is null, switch to Japanese title) */}
                                 <h1>{animeTitleCheck}</h1>
                                 <hr />
 
-                                {/* Anime Description */}
-                                <p>{synopsis}</p>
+                                {/* Anime Details Table */}
+                                <table id={animeStyle['anime-details-table']}>
+                                    {/* Change column size */}
+                                    <colgroup>
+                                        <col />
+                                        <col style={{ width: "100%" }} />
+                                    </colgroup>
+                                    {/* Anime Details */}
+                                    <tbody>
+                                        <tr>
+                                            {/* Aired Date */}
+                                            <td className={animeStyle['nowrap-cell']}><span className={animeStyle['detail-type-text']}>Aired Date:</span></td>
+                                            <td>{aired?.string}</td>
+                                        </tr>
+                                        <tr>
+                                            {/* Age Rating */}
+                                            <td className={animeStyle['nowrap-cell']}><span className={animeStyle['detail-type-text']}>Age Rating:</span></td>
+                                            <td>{rating}</td>
+                                        </tr>
+                                        <tr>
+                                            {/* Genres */}
+                                            <td className={animeStyle['nowrap-cell']}><span className={animeStyle['detail-type-text']}>Genre(s):</span></td>
+                                            <td>{genres && genres.map((genre) => genre.name).join(' - ')}</td>
+                                        </tr>
+                                        <tr>
+                                            {/* Episodes */}
+                                            <td className={animeStyle['nowrap-cell']}><span className={animeStyle['detail-type-text']}>Episodes:</span></td>
+                                            <td>{episodes}</td>
+                                        </tr>
+                                        <tr>
+                                            {/* Duration */}
+                                            <td className={animeStyle['nowrap-cell']}><span className={animeStyle['detail-type-text']}>Duration:</span></td>
+                                            <td>{duration}</td>
+                                        </tr>
+                                        <tr>
+                                            {/* Studio */}
+                                            <td className={animeStyle['nowrap-cell']}><span className={animeStyle['detail-type-text']}>Studio(s):</span></td>
+                                            <td>{studios && studios.map((studio) => studio.name).join(' - ')}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
 
-                        {/* Anime Details Table */}
-                        <table id={animeStyle['anime-details-table']}>
-                            {/* Change column size */}
-                            <colgroup>
-                                <col />
-                                <col style={{ width: "100%" }} />
-                            </colgroup>
+                        {/* Anime details container */}
+                        <div id={animeStyle["anime-desc-container"]}>
 
-                            {/* Anime Details */}
-                            <tbody>
-                                <tr>
-                                    {/* Aired Date */}
-                                    <td className={animeStyle['nowrap-cell']}><span className={animeStyle['detail-type-text']}>Aired Date:</span></td>
-                                    <td>{aired?.string}</td>
-                                </tr>
-                                <tr>
-                                    {/* Age Rating */}
-                                    <td className={animeStyle['nowrap-cell']}><span className={animeStyle['detail-type-text']}>Age Rating:</span></td>
-                                    <td>{rating}</td>
-                                </tr>
-                                <tr>
-                                    {/* Genres */}
-                                    <td className={animeStyle['nowrap-cell']}><span className={animeStyle['detail-type-text']}>Genre(s):</span></td>
-                                    <td>{genres && genres.map((genre) => genre.name).join(' - ')}</td>
-                                </tr>
-                                <tr>
-                                    {/* Episodes */}
-                                    <td className={animeStyle['nowrap-cell']}><span className={animeStyle['detail-type-text']}>Episodes:</span></td>
-                                    <td>{episodes}</td>
-                                </tr>
-                                <tr>
-                                    {/* Duration */}
-                                    <td className={animeStyle['nowrap-cell']}><span className={animeStyle['detail-type-text']}>Duration:</span></td>
-                                    <td>{duration}</td>
-                                </tr>
-                                <tr>
-                                    {/* Studio */}
-                                    <td className={animeStyle['nowrap-cell']}><span className={animeStyle['detail-type-text']}>Studio(s):</span></td>
-                                    <td>{studios && studios.map((studio) => studio.name).join(' - ')}</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                            {/* Anime Description */}
+                            <p>{synopsis}</p>
+                        </div>
                     </div>
 
                     {/* Anime Trailer Container */}

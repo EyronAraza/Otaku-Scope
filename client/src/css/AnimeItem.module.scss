@@ -149,54 +149,62 @@
             }
         }
 
-        // Anime desc container
-        #anime-desc-container {
-            height: auto;
+        // Anime Table Container
+        #anime-table-container {
             flex: 1;
-            // border: 2px solid green;
             padding: 0 20px;
-            padding-bottom: 10px;
-            margin-bottom: auto;
+            width: 100%;
 
+            // Style Anime Title
             h1 {
                 font-size: 2.2rem;
                 text-align: left;
             }
 
-            p {
-                font-size: 1rem;
+            // Anime details table
+            #anime-details-table {
+                border-collapse: collapse;
+                width: 100%;
+
+                // Style table cells
+                th,
+                td {
+                    padding: 10px;
+                    vertical-align: top;
+                    text-align: left;
+                    font-size: 1rem;
+                }
+
+                // Style first column of cell
+                .nowrap-cell {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    min-width: fit-content;
+                }
+
+                // Style all "detail type" text
+                .detail-type-text {
+                    background-color: $main-purple;
+                    padding: 1px 15px;
+                    font-weight: bold;
+                    border-radius: 50px;
+                }
             }
         }
     }
 
-    // Anime details table
-    #anime-details-table {
-        border-collapse: collapse;
-        width: 100%;
+    // Anime desc container
+    #anime-desc-container {
+        height: auto;
+        flex: 1;
+        // border: 2px solid green;
+        padding: 10px;
+        padding-bottom: 10px;
+        margin-bottom: auto;
 
-        // Style table cells
-        th,
-        td {
-            padding: 10px;
-            vertical-align: top;
-            text-align: left;
+        p {
             font-size: 1rem;
-        }
-
-        // Style first column of cell
-        .nowrap-cell {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            min-width: fit-content;
-        }
-
-        // Style all "detail type" text
-        .detail-type-text {
-            background-color: $main-purple;
-            padding: 1px 15px;
-            font-weight: bold;
-            border-radius: 50px;
         }
     }
 }
@@ -224,8 +232,10 @@
                 }
             }
 
-            // Anime description container
-            #anime-desc-container {
+            // Anime Table Container
+            #anime-table-container {
+
+                // Style Anime Title
                 h1 {
                     text-align: center;
                 }
@@ -279,8 +289,10 @@
                 }
             }
 
-            // Anime description container
-            #anime-desc-container {
+            // Anime Table Container
+            #anime-table-container {
+
+                // Style Anime Title
                 h1 {
                     text-align: center;
                 }
