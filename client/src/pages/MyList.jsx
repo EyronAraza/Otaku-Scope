@@ -10,6 +10,11 @@ import myListStyle from '/src/css/MyList.module.css'
 import Cookies from 'js-cookie';
 
 function MyList() {
+    useEffect(() => {
+        // Tab title
+        document.title = "My List | OtakuScope"
+    }, [])
+
     const { SERVER_URL } = useGlobalContext()
 
     // Allow credentials (to allow cookies or else you cant login!)
