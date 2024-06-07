@@ -21,7 +21,7 @@ const client_url = "https://otaku-scope.vercel.app"
 
 // Create express app
 const app = express()
-app.use(express.json()) // To parse JSON request bodies (e.g. to use "req.body" allowing you to access this data sent via form)
+app.use(express.json()) // To parse JSON request bodies, queries, and parameters (e.g. to use "req.body" allowing you to access this data sent via form)
 app.use(cors({ // cors is to allow cross origin (allows your server to accept requests from different origins)
     origin: [client_url],
     methods: ["GET", "POST", "PUT", "DELETE"],
